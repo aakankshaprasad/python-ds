@@ -42,6 +42,21 @@ class List:
             print(node.data)
             node = node.ptr
 
+    def insertafter(self,prevnode,data):
+        if (prevnode is None):
+            print ("Given node cannot be NULL")
+            return
+
+
+        new_node=Node(data)
+        new_node.ptr = prevnode.ptr
+        prevnode.ptr=new_node
+        new_node.prevptr=prevnode
+
+
+        if (new_node.ptr is not None):
+            new_node.ptr.prevptr=new_node
+
 
 llist=List()
 
@@ -52,5 +67,10 @@ llist.insert(10)
 llist.insertatend(99)
 llist.insertatend(100)
 llist.insertatend(108)
+llist.insertafter(llist.head,177)
 
 llist.display()
+
+
+
+
