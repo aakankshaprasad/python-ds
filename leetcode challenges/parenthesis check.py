@@ -55,3 +55,21 @@ def isValid(self, s):
                 elif ((dict[c] != stack.pop())):
                     return False
             return not stack
+
+
+        #----------------------------------------------
+        class Solution(object):
+            def isValid(self, s):
+                """
+                :type s: str
+                :rtype: bool
+                """
+                dict = {"(": ")", "{": "}", "[": "]"}
+                stack = []
+                for c in s:
+                    if (c in dict.keys()):
+                        stack.append(dict[c])
+                    elif (not stack or c != stack.pop()):
+                        return False
+                return not stack
+
