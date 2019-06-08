@@ -32,3 +32,26 @@ def isValid(self, s):
         if (len(stack) != 0):
             result = False
     return result
+
+
+
+##########################################################################################
+    class Solution(object):
+        def isValid(self, s):
+            """
+            :type s: str
+            :rtype: bool
+            """
+            opening_list = ['(', '[', '{']
+            dict = {")": "(", "}": "{", "]": "["}
+            arr = list()
+            stack = list()
+            arr = [str(r) for r in s]
+            for c in arr:
+                if (c in opening_list):
+                    stack.append(c)
+                elif not stack:
+                    return False
+                elif ((dict[c] != stack.pop())):
+                    return False
+            return not stack
