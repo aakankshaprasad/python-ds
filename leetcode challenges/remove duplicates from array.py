@@ -6,4 +6,4 @@ class Solution(object):
         :rtype: int
         """
         nums[:]=(value for value in nums if value!=val)
-        return (len(nums))
+        return (len(nums)) ##return the length of the array
