@@ -1,21 +1,26 @@
-if __name__=="__main__":
+# Enter your code here. Read input from STDIN. Print output to STDOUT
 
-    n=int(input())
-    name={}
-    for c in range (0,n):
-        a=str(input())
-        name[a.split(' ')[0]]=a.split(' ')[1]
-    #print(name)
-    count=0
-    a=list()
+if __name__ == "__main__":
+
+    n = int(input())
+    name = {}
+    for c in range(0, n):
+        a = str(input())
+        name[a.split(' ')[0]] = a.split(' ')[1]
     while True:
         try:
-            b=str(input())
-            a.append(b)
-            if a[count] in name:
-                print(a[count],'=',name[a[count]],sep='')
+            b = str(input())
+            if b in name:
+                print(b, '=', name[b], sep='')
             else:
                 print('Not found')
-            count+=1
         except (EOFError):
             break
+
+
+
+
+
+
+
+
