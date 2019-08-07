@@ -5,7 +5,6 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        print (nums, target)
 
         result = 0
         for x in range(len(nums)):
